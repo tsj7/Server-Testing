@@ -9,6 +9,17 @@ const MonkeySchema = new Schema({
   }
 });
 
+
+MonkeySchema.methods.getName = function() {
+  return this.name
+}
+
+MonkeySchema.statics.getAllMonkeys = function (cb) {
+  Monkey.find({}, (err,monkey) => {
+    if (err) return cb(err);
+    cb(monkey);
+  });
+};
 const Monkey = mongoose.model('Monkey', MonkeySchema);
 
 module.exports = Monkey;
