@@ -7,4 +7,4 @@ mongoose.connect('mongodb://localhost/monkeys/', {}, () => {
 
 server.listen(3000, () => {
   console.log("server up on port 3000.")
-});
+}); 
